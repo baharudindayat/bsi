@@ -1,0 +1,22 @@
+package com.bsi.bsi.model.entity;
+
+import jakarta.persistence.*;
+import lombok.*;
+
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Entity
+@Data
+@Table(name = "bank", schema = "public")
+public class Bank {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "kode_bank")
+    private long kodeBank;
+
+    @Column(nullable = false, unique = true,name = "nama_bank")
+    private String namaBank;
+}
